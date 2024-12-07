@@ -1,0 +1,106 @@
+body {
+    background-color: rgb(81, 88, 117);
+}
+
+.game {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Horizontally center the board */
+    align-items: center; /* Vertically center the board */
+    gap: 20px; /* Add spacing between elements like heading, board */
+    height: 100vh; /* Full viewport height */
+}
+
+.game--title {
+    font-size: 100px;
+    color: #14271b;
+    margin: 10px auto;
+    margin: 20px;
+}
+
+.game--status {
+    font-size: 40px;
+    color: #14271b;
+    margin: 20px auto;
+}
+
+.game--restart {
+    background-color: #c99e1e;
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    color: #14271b;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #14271b;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.game--restart:hover {
+    background-color: #539f63; /* Slightly lighter blue for hover */
+    border-color: #0d744d;
+}
+
+.game--board {
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(3, 100px); /* Create 3 equal columns */
+    gap: 4px; /* Black "lines" between cells */
+    background-color: black;
+    padding: 4px; /* Adds padding around the board */
+}
+
+.game--board.game-end .cell:hover {
+    background-color: rgb(127, 137, 178); /* Removes hover effect */
+    cursor: default;
+}
+
+.game--board.game-end .cell.taken:hover {
+    background-color: #2b6842; /* taken cells retain color and no hover effect */
+}
+
+.game--board.game-end .cell.winning:hover {
+    background-color: #28a745; /* Winning cells retain color and no hover effect */
+}
+
+.cell {
+    display: flex;
+    height: 100px;
+    align-items: center; /* Vertically center text in the cell */
+    justify-content: center; /* Horizontally center text in the cell */
+    font-size: 32px; /* Set the font size for cell text */
+    font-family: "Permanent Marker", cursive;
+    cursor: pointer;
+    background-color: rgb(127, 137, 178);
+    transition: background-color 0.3s ease; /* Add a smooth transition for hover effects */
+}
+
+.cell.taken {
+    background-color: #2b6842; /* style for taken cell */
+    cursor: not-allowed; /* Change cursor, to prevent interaction  */
+}
+
+/* Hover effect for cells */
+.cell:hover {
+    background-color: #2b5a90; /* change color for hover effect */
+}
+
+.cell.taken:hover {
+    background-color: #2b6842; /* Disable hover efffect for taken cells */
+}
+
+.cell.winning {
+    background-color: #28a745; /* Green for winning cells */
+    color: white; /* Optional: change text color */
+}
+
+
+
+/*
+Board	Two-dimensional layouts (rows and columns)	
+        Grid lets you easily define rows and columns, ensuring the cells are evenly distributed in a 2D space.
+Cells	flex is used to center content (like X or O) inside each cell.	
+        Flexbox is perfect for single-dimensional alignment, ensuring content inside the cell is vertically and horizontally centered.
+
+No Rows Specified:
+- The rows are automatically created based on the number of grid items (cells) added. In this case, adding 9 cells will automatically generate 3 rows (3 cells per row).
+
+*/
