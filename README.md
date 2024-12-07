@@ -20,15 +20,19 @@ A real-time multiplayer Tic Tac Toe game built using **HTML**, **CSS**, **JavaSc
    ```bash
    git clone https://github.com/your-username/tic-tac-toe-multiplayer.git
 
-2. Install Dependencies;
+2. Install Dependencies:
+    ```bash
     npm install
 
 3. start the server:
+    ```bash
     npm start
 
 4. Open the game in your browser:
+    ```bash
     http://localhost:3000
 
 5. Share your local IP with another player:
+    ```bash
     http://<your-local-ip>:3000
     
